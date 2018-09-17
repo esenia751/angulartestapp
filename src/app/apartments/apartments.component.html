@@ -1,0 +1,13 @@
+<form class="searchform" align="center">
+  <p>
+  <label>Введите название улицы:</label>
+  <input class="streetinput" type="text" [(ngModel)]="searchStr">
+  <!--button class="searchbutton">Поиск</button-->
+  </p>
+</form>
+
+<div class="row">
+	<app-apartmentcard *ngFor="let ap of apartments | search:searchStr"
+  [apartment]="ap">
+	</app-apartmentcard>
+</div>

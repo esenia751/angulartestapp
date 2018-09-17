@@ -1,0 +1,27 @@
+<!--div class="card">
+	<img class="pic" [src]="apartment.imgname" alt="Apartment" style="width: 100%">
+	<div class="container">
+		<p><b>{{ apartment.street }}</b></p>
+		<p>{{ apartment.house }}</p>
+		<p>{{ apartment.floor }}</p>
+		<p>{{ apartment.rooms }}</p>
+		<p>{{ apartment.square }}</p>
+		<p><a href="/apartments">К списку квартир</a></p>
+	</div>
+</div-->
+
+<div class="idcard">
+	<app-apartmentcard> <!--SOME KIND OF DICH, NOTHING IS READ FROM ARRAY, NOT WORKING -->
+	</app-apartmentcard>
+	<p><b>{{ apartment.street }}</b></p>
+	<p>{{ apartment.house }}</p>
+	<p>{{ apartment.floor }}</p>
+	<p>{{ apartment.rooms }}</p>
+	<p>{{ apartment.square }}</p>
+	
+  <!--app-apartments
+  *ngFor="let ap of apartments | search:searchStr"
+  [apartment]="ap"-->
+  <!--router-outlet></router-outlet-->
+</div>
+<p><a href="apartments">К списку квартир</a></p>
