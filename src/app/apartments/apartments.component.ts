@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ApartmentsService } from './apartments.service';
+import { Globals } from '../globals';
 
 @Component({
   selector: 'app-apartments',
@@ -8,13 +9,14 @@ import { ApartmentsService } from './apartments.service';
   providers: [ApartmentsService]
 })
 export class ApartmentsComponent implements OnInit {
+	@Input() apartment;
+	@Input() imgname;
 
 	apartments = [];
 	searchStr = '';
-	
-	constructor(private apartmentsService: ApartmentsService) {};
-	ngOnInit() {
-		this.apartments = this.apartmentsService.apartments
-	}
 
+	constructor(private apartmentsService: ApartmentsService) {	}
+	ngOnInit() {
+		this.apartments = this.apartmentsService.apartments;
+	}
 }

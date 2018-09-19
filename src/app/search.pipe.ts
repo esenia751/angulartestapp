@@ -4,22 +4,10 @@ import { Pipe, PipeTransform } from '@angular/core';
 	name: 'search'
 })
 
-
 export class SearchPipe implements PipeTransform {
 	transform(apartments, value) {
 		return apartments.filter(apartment => {
-			return apartment.street.includes(value);
+			return apartment.street.toLowerCase().includes(value)
 		})
 	}
-	
 }
-
-/*
-export class SearchPipe implements PipeTransform {
-	transform(apartments, searchStr) {
-		return apartments.filter(apartment => {
-			return apartment.street.includes(searchStr)
-		})
-	}
-	
-}*/

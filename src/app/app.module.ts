@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { SearchPipe } from './search.pipe';
+import { HoverDirective } from './apartments/apartmentcard/hover.directive';
 import { RouterModule } from '@angular/router';
+import { Globals } from './globals';
 
 import { AppComponent } from './app.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -24,14 +26,15 @@ const routes = [
     ApartmentsComponent,
     ApartmentcardComponent,
     IdComponent,
-    SearchPipe
+    SearchPipe,
+    HoverDirective
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [Globals],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

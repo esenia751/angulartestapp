@@ -18,6 +18,19 @@
 	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
+.idcardpic {
+	padding: 10px;
+	width: 40%;
+	float: left;
+}
+
+.idcardtext {
+	width: 50%;
+	margin-top: 5%;
+	margin-left: 5%;
+	float: left;
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
