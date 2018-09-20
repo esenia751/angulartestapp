@@ -1,6 +1,6 @@
-/*import { Component, OnInit } from '@angular/core';*/
 import { Component, Input } from '@angular/core';
-import { Globals } from '../../globals';
+import { Apartment } from '../apartment';
+import { ApartmentsService } from '../apartments.service';
 
 @Component({
   selector: 'app-apartmentcard',
@@ -10,7 +10,7 @@ import { Globals } from '../../globals';
 })
 
 export class ApartmentcardComponent {
-	@Input() apartment;
-	@Input() imgname;
+	@Input() apartment: Apartment;
+	/*@Input() imgname;*/
 	constructor() {}
 }

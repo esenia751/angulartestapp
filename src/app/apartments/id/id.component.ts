@@ -1,29 +1,32 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 import { ApartmentsService } from '../apartments.service';
-import { HoverDirective } from '../apartmentcard/hover.directive';
-import { Globals } from '../../globals';
+import { Apartment } from '../apartment'
 
 @Component({
   selector: 'app-id',
   templateUrl: './id.component.html',
   styleUrls: ['./id.component.css'],
-  providers: [ApartmentsService, HoverDirective]
+  providers: []
 })
 export class IdComponent implements OnInit {
 
-	/*getInfo = [];*/
-	apartments = [];
-	@Input() apartment;
-	/*@Input() imgname;*/
+	apartment: Apartment;
 
-	constructor(private apartmentsService: ApartmentsService) {};
+	constructor(
+		private route: ActivatedRoute,
+		private apartmentsService: ApartmentsService,
+		private location: Location
+	) {};
+
 	ngOnInit() {
-		this.thestreet = Globals.thestreet;
-		this.thehouse = Globals.thehouse;
-		this.theimgname = Globals.theimgname;
-		this.thefloor = Globals.thefloor;
-		this.therooms = Globals.therooms;
-		this.thesquare = Globals.thesquare;
+		this.getApartment();
+	}
+
+	getApartment(): void {
+		const id = +this.route.snapshot.paramMap.get('id');
+		this.apartmentsService.getApartment(id).subscribe(apartment => this.apartment = apartment);
 	}
 	
 }
